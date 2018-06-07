@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--charset定义文档的字符编码-->
+    <meta charset="utf-8">
+    <title>css3新增属性介绍</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            line-height: 2;
+        }
+        .css-border{
+            width:350px;
+            background: #ff0000;
+            border-radius: 20px;
+            box-shadow:10px 10px 10px #000;
+            -moz-border-image:url(border.png) 30 30 round;	/* Old Firefox */
+            -webkit-border-image:url(border.png) 30 30 round;	/* Safari and Chrome */
+            -o-border-image:url(border.png) 30 30 round;		/* Opera */
+            border-image:url(border.png) 30 30 round;
+            border:15px solid transparent;
+            color:#fff;
+            margin:30px;
+
+        }
+        .css-text{
+            text-shadow: 5px 5px 5px #000;
+            word-wrap:break-word;/*在长单词或 URL 地址内部进行换行   normal 只在允许的断字点换行*/
+            text-wrap:normal;/*normal	只在允许的换行点进行换行  none	不换行。元素无法容纳的文本会溢出。unrestricted	在任意两个字符间换行 suppress	压缩元素中的换行。浏览器只在行中没有其他有效换行点时进行换行。*/
+            text-overflow: clip;/*clip 修剪文本   ellipsis 显示省略符号来代表被修剪的文本。 inherit	默认文本效果*/
+            margin:30px;
+        }
+        .css-linear{
+            padding: 20px;
+        }
+        h1{
+            padding: 20px;
+            font-size: 16px; color: #fff;
+            background: -webkit-linear-gradient(red, blue); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(red, blue); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(red, blue); /* Firefox 3.6 - 15 */
+            background: linear-gradient(red, blue); /* 标准的语法 */
+        }
+    </style>
+</head>
+<body>
+<div class="css-border">
+    css3边框<br/>
+    通过 CSS3，您能够创建圆角边框，向矩形添加阴影，使用图片来绘制边框<br/>
+    border-radius 圆角<br/>
+    box-shadow  阴影<br/>
+    border-image  边框图片<br/>
+</div>
+<div class="css-text">
+    css3文本效果<br/>
+    text-shadow 文本应用阴影<br/>
+    word-wrap  允许对长的不可分割的单词进行分割并换行到下一行  在长单词或 URL 地址内部进行换行。<br/>
+    text-wrap  文本的换行（折行）规则<br/>
+    text-overflow 属性规定当文本溢出包含元素时发生的事情。<br/>
+</div>
+<div class="css-linear">
+    <h1>
+        css3新增背景样式<br/>
+        线性渐变（Linear Gradients）- 向下/向上/向左/向右/对角方向<br/>
+        径向渐变（Radial Gradients）- 由它们的中心定义<br/>
+        线性渐变 - 从上到下  background: linear-gradient(red, blue);<br/>
+        线性渐变 - 从左到右  background: linear-gradient(to right, red , blue);<br/>
+        线性渐变 - 对角      background: linear-gradient(to bottom right, red , blue)<br/>
+        使用角度            background: linear-gradient(angle, color-stop1, color-stop2)<br/>
+    </h1>
+</div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,90 @@
+<html><!-- H5 -->
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd"> -->
+<html>
+<head>
+	<!--charset定义文档的字符编码-->
+	<meta charset="utf-8">
+	<title>html & css</title>
+	<meta name="Keywords" content="">
+    <meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<!-- UC强制全屏 -->
+	<meta name="full-screen" content="no">
+	<!-- QQ应用模式 -->
+	<meta name="x5-page-mode" content="app">
+    <!--content属性提供了名称/值对中的值,该值可以是任何有效的字符串.它始终要盒name属性或http-equiv属性一起使用-->
+    <!--name属性为名称/值对提供了名称,与content一起用
+    <meta name = "description  对页面的描述/author 页面作者/keywords 对搜索引擎的关键词/generator 信息参数,代表网站的采用什么软件制作/revised 页面的最新版本/others" content="dddddddd">-->
+    <!--http-equiv属性为名称/值对提供了名称.并指示服务器在发送实际的文档之前先在要传送给浏览器的MIME文档头部名称/值,也就是http-equiv对应的健和CONTENT对应的值,这组值对发送给服务器
+    <meta http-equiv="content-Type 显示字符集的设定 /
+              expires 期限,一旦网页到期,必须到服务器上重新传输/
+              refresh 自动刷新页面并指向新页面/set-cookie 如果网页过期,那么存盘的cookie将被删除/
+              pragma  浏览器从本地计算机的缓存中访问页面是否禁止,通常CONTENT为no-cache"/
+              Content-Language 显示语言的设定 content="zh-cn" /content="">-->
+    <!-- <meta http-equiv="refresh" content="2;URL=http://www.baidu.com"> -->
+	<link rel="stylesheet" href="style.css">
+	<style type="text/css">
+		.inner-block{
+			background-color: #e6e6e6;
+			height: 200px;
+			display: block;
+		}
+		.box{
+			margin: 20px;
+			padding: 30px;
+			border: 10px solid #e6e6e6;
+			height: 100px;
+		}
+		p[test]{
+			color: red;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="inner-block" style="background-color: #f5f5f5; min-height: 200px;">
+	块级元素都从新的一行开始，并且其后的元素也会另起一行<br/>元素的高度  宽度  行高遗迹顶盒底边距都可设置<br/>元素宽度在不设置的情况下，是它父容器的100%。<br/>
+	<h1 style="background-color: orange;color: #fff;"> 块级元素h1</h1>
+	<p style="background-color: orange;color: #fff;"> 块级元素p</p>
+	<a href="###" style="background-color: red; color: #fff;padding: 10px;">超链接a</a>   
+	<span style="background-color: blue;color: #fff;padding: 10px;">span标签</span>  
+	<label style="background-color: green;color: #fff;padding: 10px;">label标签</label>
+	</div>
+
+	<div style="margin-top: 20px;" >meta介绍</div>
+	<div id='box' class="box">盒模型 content</div>
+	<script type="text/javascript">
+		var box = document.getElementById('box');
+		var cheight = box.clientHeight;
+		var cwidth = box.clientWidth;
+		var oheight = box.offsetHeight;
+		var owidth = box.offsetWidth;
+		console.log('clientWidht:'+ cwidth + '  clientHeight:' + cheight);
+		console.log('offsetWidht:'+ owidth + '  offsetHeight:' + oheight);
+	</script>
+
+	<div class="txt">
+		<style type="text/css">
+		  .txt{width: 400px; background-color: #f5f5f5;display: none;}
+		  .txt h1 {text-transform: uppercase;/*word-break:hyphenate;word-break:break-all;*/word-wrap:break-word;}
+		  .txt p.uppercase {text-transform: uppercase;text-align: justify;}
+		  .txt p.lowercase {text-transform: lowercase;white-space: nowrap;}
+		  .txt p.capitalize {text-transform: capitalize}
+		</style>
+		<h1>This Is An H1 Element</h1>
+		<p class="uppercase" test>This is some text in a paragraph.</p>
+		<p class="lowercase">This is some text in a paragraph.</p>
+		<p class="capitalize">This is some text in a paragraph.</p>
+	</div>
+</body>
+
+</html>

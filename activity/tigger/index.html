@@ -1,0 +1,457 @@
+<!-- saved from url=(0078)https://www.mmgod.com/activity.php?id=1060&hdsortid=463&topsortid=&from=mjtqaz
+-->
+<html style="font-size: 200px;">
+    
+    <head>
+        <meta charset="gbk">
+        <meta http-equiv="Content-Type" content="text/html; charset=gbk">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+        <title>
+            玩嗨游戏 装备送你
+        </title>
+        <script>
+            !
+            function(e, i) {
+                var t = e.documentElement,
+                m = "orientationchange" in window ? "orientationchange": "resize";
+                var s = function() {
+                    var e = t.clientWidth;
+                    e > 640 && (e = 640),
+                    t.style.fontSize = 200 * (e / 640) + "px"
+                };
+                s(),
+                e.addEventListener && i.addEventListener(m, s, !1)
+            } (document, window);
+        </script>
+        <link rel="stylesheet" type="text/css" href="images/index.css">
+        <link rel="stylesheet" type="text/css" href="images/showalert.css">
+        <script src="images/jquery.js"></script>
+        <script>
+            var nexticon = {
+                "canshow": 1,
+                "lucklimit": "8",
+                "url": "\/activity.php?id=77&from=mjtqaz&hdsortid=463&topsortid=",
+                "src": "images\/icon6.png",
+                "w": 0.8,
+                "h": 0.8
+            };
+        </script>
+        <script>
+            var ajaxUrl = {
+                'rule': '/ajax.php?a=rule&tplid=25',
+                'leftnum': '/ajax.php?a=leftnum&id=1060',
+                'myprize': '/ajax.php?a=myprize&id=1060'
+            };
+        </script>
+        <script src="images/index.js">
+        </script>
+        <style>
+            .banner{background-image:url(images/banner.png) !important;} body{background:url(images/bg.png)
+            no-repeat center; !important;} .record{background-image:url(images/prize2.png)
+            !important;} .rule{background-image:url(images/rule2.png) !important;}
+            #prize-list{background-image:url(images/prize-box2.png) !important;} #prize-list
+            .prize-item{background-color:#e9e2e2 !important;display: inline-block;
+            margin-right: 0.2rem;} #apple{color:#fff !important;text-align: center;margin:
+            0.1rem auto;font-size: 0.06rem;} .slot-machine{background-image:url(images/main-bg3.png)
+            !important;} .slot-machine-outer:before{background-image:url(images/mainBgShadow2.png)
+            !important;} .tile-1:before{background-image:url(images/item-bg-green2.png)
+            !important;} .tile-2:before{background-image:url(images/item-bg-orange3.png)
+            !important;} .tile-3:before{background-image:url(images/item-bg-red2.png)
+            !important;} .tile-4:before{background-image:url(images/item-bg-green2.png)
+            !important;} .tile-5:before{background-image:url(images/item-bg-orange3.png)
+            !important;} .tile-6:before{background-image:url(images/item-bg-red2.png)
+            !important;} .tile-7:before{background-image:url(images/item-bg-green2.png)
+            !important;} .tile-8:before{background-image:url(images/item-bg-orange3.png)
+            !important;} .operate-area .outer{background-image:url(images/pane3.png)
+            !important;} .light{background-image:url(images/light2.png) !important;}
+            .light:after{background-image:url(images/light-active2.png) !important;}
+            .coin-big{background-image:url(images/coin-big2.png) !important;} .coin-middle{background-image:url(images/coin-middle2.png)
+            !important;} .coin-small{background-image:url(images/coin-small2.png) !important;}
+            .start{background-image:url(images/btn3.png) !important;} .start:disabled{background-image:url(images/btn3.png)
+            !important;} .start.active{background-image:url(images/btn-disabled2.png?r)
+            !important;} .needCredits{background-image:url(images/credit2.png) !important;}
+        </style>
+    </head>
+    
+    <body>
+        <div id="db-content" style="display: block;">
+            <div class="record" onclick="location.href='/list.php';">
+            </div>
+            <div class="rule" id="rule" onclick="showRule()">
+            </div>
+            <div class="banner">
+            </div>
+            <div id="slot-machine" class="slot-machine-container">
+                <div class="slot-machine">
+                    <div class="light-pane landscape-pane top-light-pane">
+                        <span class="light light-delay">
+                        </span>
+                        <span class="light">
+                        </span>
+                        <span class="light light-delay">
+                        </span>
+                        <span class="light">
+                        </span>
+                        <span class="light">
+                        </span>
+                    </div>
+                    <div class="light-pane landscape-pane bottom-light-pane">
+                        <span class="light">
+                        </span>
+                        <span class="light">
+                        </span>
+                        <span class="light">
+                        </span>
+                        <span class="light">
+                        </span>
+                        <span class="light">
+                        </span>
+                    </div>
+                    <div class="light-pane vertical-pane left-light-pane">
+                        <span class="light">
+                        </span>
+                        <span class="light">
+                        </span>
+                        <span class="light">
+                        </span>
+                        <span class="light">
+                        </span>
+                        <span class="light">
+                        </span>
+                    </div>
+                    <div class="light-pane vertical-pane right-light-pane">
+                        <span class="light">
+                        </span>
+                        <span class="light">
+                        </span>
+                        <span class="light">
+                        </span>
+                        <span class="light">
+                        </span>
+                        <span class="light">
+                        </span>
+                    </div>
+                    <div class="slot-machine-outer">
+                        <div class="slot-machine-inner">
+                            <div class="reel reel-1" style="top: 0rem;">
+                                <div class="tile tile-1">
+                                    <img src="images/g01.png">
+                                </div>
+                                <div class="tile tile-2">
+                                    <img src="images/g02.png">
+                                </div>
+                                <div class="tile tile-3">
+                                    <img src="images/g03.png">
+                                </div>
+                                <div class="tile tile-4">
+                                    <img src="images/g04.png">
+                                </div>
+                                <div class="tile tile-5">
+                                    <img src="images/g05.png">
+                                </div>
+                                <div class="tile tile-1">
+                                    <img src="images/g01.png">
+                                </div>
+                                <div class="tile tile-2">
+                                    <img src="images/g02.png">
+                                </div>
+                                <div class="tile tile-3">
+                                    <img src="images/g03.png">
+                                </div>
+                                <div class="tile tile-4">
+                                    <img src="images/g04.png">
+                                </div>
+                                <div class="tile tile-5">
+                                    <img src="images/g05.png">
+                                </div>
+                                <div class="tile tile-1">
+                                    <img src="images/g01.png">
+                                </div>
+                                <div class="tile tile-2">
+                                    <img src="images/g02.png">
+                                </div>
+                                <div class="tile tile-3">
+                                    <img src="images/g03.png">
+                                </div>
+                                <div class="tile tile-4">
+                                    <img src="images/g04.png">
+                                </div>
+                                <div class="tile tile-5">
+                                    <img src="images/g05.png">
+                                </div>
+                            </div>
+                            <div class="reel reel-2" style="top: 0rem;">
+                                <div class="tile tile-1">
+                                    <img src="images/g01.png">
+                                </div>
+                                <div class="tile tile-2">
+                                    <img src="images/g02.png">
+                                </div>
+                                <div class="tile tile-3">
+                                    <img src="images/g03.png">
+                                </div>
+                                <div class="tile tile-4">
+                                    <img src="images/g04.png">
+                                </div>
+                                <div class="tile tile-5">
+                                    <img src="images/g05.png">
+                                </div>
+                                <div class="tile tile-1">
+                                    <img src="images/g01.png">
+                                </div>
+                                <div class="tile tile-2">
+                                    <img src="images/g02.png">
+                                </div>
+                                <div class="tile tile-3">
+                                    <img src="images/g03.png">
+                                </div>
+                                <div class="tile tile-4">
+                                    <img src="images/g04.png">
+                                </div>
+                                <div class="tile tile-5">
+                                    <img src="images/g05.png">
+                                </div>
+                                <div class="tile tile-1">
+                                    <img src="images/g01.png">
+                                </div>
+                                <div class="tile tile-2">
+                                    <img src="images/g02.png">
+                                </div>
+                                <div class="tile tile-3">
+                                    <img src="images/g03.png">
+                                </div>
+                                <div class="tile tile-4">
+                                    <img src="images/g04.png">
+                                </div>
+                                <div class="tile tile-5">
+                                    <img src="images/g05.png">
+                                </div>
+                            </div>
+                            <div class="reel reel-3" style="top: -3.82251rem;">
+                                <div class="tile tile-1">
+                                    <img src="images/g01.png">
+                                </div>
+                                <div class="tile tile-2">
+                                    <img src="images/g02.png">
+                                </div>
+                                <div class="tile tile-3">
+                                    <img src="images/g03.png">
+                                </div>
+                                <div class="tile tile-4">
+                                    <img src="images/g04.png">
+                                </div>
+                                <div class="tile tile-5">
+                                    <img src="images/g05.png">
+                                </div>
+                                <div class="tile tile-1">
+                                    <img src="images/g01.png">
+                                </div>
+                                <div class="tile tile-2">
+                                    <img src="images/g02.png">
+                                </div>
+                                <div class="tile tile-3">
+                                    <img src="images/g03.png">
+                                </div>
+                                <div class="tile tile-4">
+                                    <img src="images/g04.png">
+                                </div>
+                                <div class="tile tile-5">
+                                    <img src="images/g05.png">
+                                </div>
+                                <div class="tile tile-1">
+                                    <img src="images/g01.png">
+                                </div>
+                                <div class="tile tile-2">
+                                    <img src="images/g02.png">
+                                </div>
+                                <div class="tile tile-3">
+                                    <img src="images/g03.png">
+                                </div>
+                                <div class="tile tile-4">
+                                    <img src="images/g04.png">
+                                </div>
+                                <div class="tile tile-5">
+                                    <img src="images/g05.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="needCredits" id="needCredits">
+                    今日免费：
+                    <span id="nums">
+                        8
+                    </span>
+                    次
+                </div>
+                <div class="operate-area">
+                    <div class="outer">
+                        <span class="coin coin-big">
+                        </span>
+                        <button class="start" id="start" type="button" onclick="startFn();">
+                        </button>
+                        <span class="coin coin-middle">
+                        </span>
+                        <span class="coin coin-small">
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="prize-list" id="prize-list">
+                <div class="prize-container">
+                    <div id="prizes-wrapper" style="width: 4.4rem; padding-left: 0.1rem; padding-right: 0rem;">
+                        <div class="prize-item">
+                            <div class="">
+                                <img class="prize-img" src="images/01.png">
+                            </div>
+                            <p class="prize-name">
+                                666元红包
+                            </p>
+                        </div>
+                        <div class="prize-item">
+                            <div class="">
+                                <img class="prize-img" src="images/02.png">
+                            </div>
+                            <p class="prize-name">
+                                200元红包
+                            </p>
+                        </div>
+                        <div class="prize-item">
+                            <div class="">
+                                <img class="prize-img" src="images/03.png">
+                            </div>
+                            <p class="prize-name">
+                                100元话费
+                            </p>
+                        </div>
+                        <div class="prize-item">
+                            <div class="">
+                                <img class="prize-img" src="images/04.png">
+                            </div>
+                            <p class="prize-name">
+                                50元话费
+                            </p>
+                        </div>
+                        <div class="prize-item">
+                            <div class="">
+                                <img class="prize-img" src="images/05.png">
+                            </div>
+                            <p class="prize-name">
+                                幸运福袋
+                            </p>
+                        </div>
+                    </div>
+                    <div class="prize-tag">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="apple" style="">
+            兑换项与活动和设备生产商Apple Inc.公司无关
+        </div>
+        <script type="text/javascript">
+            initText();
+            function setCanClick() {
+                $('#start').removeAttr('disabled').removeClass('active');
+            }
+            function startFn() {
+                if ($('#start').is('disabled')) return false;
+                $('#start').attr('disabled', true).addClass('active');
+                $.ajax({
+                    'url': '/run.php?id=1060&r=' + Math.random(),
+                    'type': 'post',
+                    'dataType': 'json',
+                    'success': function(e) {
+                        if (!e) {
+                            showWifi();
+                            setCanClick();
+                            return;
+                        }
+                        if (e.status == 200) {
+                            $('.reel').stop();
+                            rotateFn(e);
+                        } else if (e.status == 199) {
+                            showNochance();
+                            setCanClick();
+                        } else {
+                            showWifi();
+                            setCanClick();
+                        }
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown) {
+                        showWifi();
+                    }
+                });
+            }
+        </script>
+        <script src="/count.php?id=1060">
+        </script>
+        <span style="display:none">
+            <script src="https://s19.cnzz.com/z_stat.php?id=1265461822&amp;web_id=1265461822"
+            language="JavaScript">
+            </script>
+            <script src="https://c.cnzz.com/core.php?web_id=1265461822&amp;t=z" charset="utf-8"
+            type="text/javascript">
+            </script>
+            <a href="http://www.cnzz.com/stat/website.php?web_id=1265461822" target="_blank"
+            title="站长统计">
+                站长统计
+            </a>
+        </span>
+        <!--弹窗部分-->
+        <div id="alertbg">
+        </div>
+        <div id="alert">
+            <div class="rulealert" style="display: block;">
+                <div class="ruletitle">· 活动规则 ·<a class="close" onclick="closeRule()">X</a></div><div class="rulecontent">活动说明：参与活动即有机会获得幸运奖~此活动为概率中奖，奖品数量有限，祝好运！<br><br>
+                惊喜一：笔记本 <br>
+                惊喜二：耳机 <br>
+                惊喜三：键盘 <br>
+                惊喜四：鼠标 <br>
+                惊喜五：幸运礼包 <br>
+                －－－－－－－－－－－－－－－－<br>
+                重要声明：<br>
+                1、实物类奖品将在活动结束后5-10个工作日安排发货，请耐心等待<br>
+                2、优惠券类奖品的使用规则详见每个优惠券的介绍页<br>
+                3、通过非法途径获得奖品的，主办方有权不提供奖品<br></div>
+            </div>
+            <div class="wifialert">
+                <div class="wifiimg"></div>
+                <a onclick="location.reload();">重新加载</a>
+            </div>
+            <div class="nochance">
+                <div class="close">
+                    <a onclick="closeNochance()">
+                        X
+                    </a>
+                </div>
+                <img class="gold" src="images/chanceT.png">
+                <div class="chancecontent">
+                    <a onclick="location.replace('/activity.php?id=77&amp;from=mjtqaz&amp;hdsortid=463&amp;topsortid=');">
+                        <img src="images/1510554448_45469100.jpg">
+                    </a>
+                    <a class="gonow" onclick="location.replace('/activity.php?id=77&amp;from=mjtqaz&amp;hdsortid=463&amp;topsortid=');">
+                        gonow
+                    </a>
+                    <div class="lbg cbg">
+                    </div>
+                    <div class="rbg cbg">
+                    </div>
+                </div>
+            </div>
+            <div class="showone2" id="zhongjiang" style="display: none;">
+                    <span class="close coupon-modal-close" onclick="closeOne()"></span>
+                    <div class="showonemode">
+                        <div class="topbg"></div><div class="titleh3"><h3>注册后88元红包带回家！</h3></div><a class="showonelink imgborder" href="/go.php?tag=1&amp;id=7714460"><img class="J_gotoDetail logandgo" src="images/1513078477_72954000.gif"></a>
+                    </div>
+                    <a class="showonelink showbutton" href="/go.php?tag=1&amp;id=7714460"><span>立即领取</span></a>
+                    <div class="modal-light"></div>
+                </div>
+        </div>
+        <!-- 弹窗end-->
+    </body>
+
+</html>

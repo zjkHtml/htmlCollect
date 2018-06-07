@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--charset定义文档的字符编码-->
+        <meta charset="utf-8">
+        <!--content属性提供了名称/值对中的值,该值可以是任何有效的字符串.它始终要盒name属性或http-equiv属性一起使用-->
+        <!--name属性为名称/值对提供了名称,与content一起用
+        <meta name = "description  对页面的描述/author 页面作者/keywords 对搜索引擎的关键词/generator 信息参数,代表网站的采用什么软件制作/revised 页面的最新版本/others" content="dddddddd">-->
+        <!--http-equiv属性为名称/值对提供了名称.并指示服务器在发送实际的文档之前先在要传送给浏览器的MIME文档头部名称/值,也就是http-equiv对应的健和CONTENT对应的值,这组值对发送给服务器
+        <meta http-equiv="content-Type 显示字符集的设定 /
+                  expires 期限,一旦网页到期,必须到服务器上重新传输/
+                  refresh 自动刷新页面并指向新页面/set-cookie 如果网页过期,那么存盘的cookie将被删除/
+                  pragma  浏览器从本地计算机的缓存中访问页面是否禁止,通常CONTENT为no-cache"/
+                  Content-Language 显示语言的设定 content="zh-cn" /content="">-->
+        <!--<meta http-equiv="refresh" content="2;URL=http://www.baidu.com">-->
+        <title>form表单介绍</title>
+        <style>
+            input{
+                margin:10px 0
+            }
+        </style>
+    </head>
+    <body>
+
+        <form action="" method="post" name="" autocomplete="off" target="_blank" id="user_form">
+            <fieldset>
+                <legend>
+                    form表单介绍
+                </legend>
+                <lable for="male">文本</lable>
+                <input type="text" autocomplete="on" autofocus name="text" id="male" placeholder="dddd" required="required"><br/>
+                <lable for="ltel">电话号码</lable>
+                <input type="tel" name="ltel"><br/>
+                <lable for="lcheck">复选框</lable>
+                <input type="checkbox" autocomplete="off" name="checkbox" autocomplete="on" id="lcheck"><br/>
+                <lable  for="lemail">邮箱域</lable>
+                <input type="email" name="email" autocomplete="on" id="lemail"><br/>
+                <lable  for="lurl">地址域</lable>
+                <input type="url" name="url" autocomplete="on" id="lurl"><br/>
+                <lable  for="lnumber">数值域</lable>
+                <input type="number" name="number" autocomplete="on" id="lnumber"><br/>
+                <lable  for="lrange">滑动条</lable>
+                <input type="range" name="point" min="1" max="10" id="lrange"><br/>
+                <lable  for="ldate">日期</lable>
+                <input type="date" name="user_date" id="ldate"><br/>
+                <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select><br/>
+                <!--<input type="month" name="user_month">-->
+                <!--<input type="week" name="user_week">-->
+                <!--<input type="datatime" name="user_datatime">-->
+                <!--<input type="datatime-local" name="user_local">-->
+                <input type="search" name="sea">
+                <input type="color" name="sea">
+                <!--formaction - 重写表单的 action 属性-->
+                <input type="submit" value="submit"  formaction="">
+                <!--formmethod - 重写表单的 method 属性-->
+                <input type="submit" value="submit" formmethod="">
+                <!--重置按钮-->
+                <input type="reset" value="reset" >
+            </fieldset>
+        </form>
+        <!--下面的输入域在 form 元素之外，但仍然是表单的一部分。-->
+        last name:<input type="text" name="lname" form = "user_form">
+    </body>
+</html>

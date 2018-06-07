@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--charset定义文档的字符编码-->
+    <meta charset="utf-8">
+    <title>transform-translate介绍</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .css-normal{
+            width:400px;
+            height:75px;
+            background-color:#f6f6f6;
+            border:1px solid black;
+            margin:20px;
+        }
+        .css-translate{
+            display: block;
+            width:100px;
+            height:75px;
+            background-color:yellow;
+            border:1px solid black;
+            transform:translate(50px,25px);
+            -ms-transform:translate(50px,25px); /* IE 9 */
+            -moz-transform:translate(50px,25px); /* Firefox */
+            -webkit-transform:translate(50px,25px); /* Safari and Chrome */
+            -o-transform:translate(50px,25px); /* Opera */
+        }
+
+        .css-skew{
+            width:100px;
+            height:75px;
+            background-color:yellow;
+            border:1px solid black;
+            margin:20px;
+            transform:skew(30deg,20deg);
+            -ms-transform:skew(30deg,20deg); /* IE 9 */
+            -moz-transform:skew(30deg,20deg); /* Firefox */
+            -webkit-transform:skew(30deg,20deg); /* Safari and Chrome */
+            -o-transform:skew(30deg,20deg); /* Opera */
+        }
+        .css-scale{
+            width:100px;
+            height:75px;
+            background-color:yellow;
+            border:1px solid black;
+            margin:100px;
+            transform:scale(2,2);
+            -ms-transform:scale(2,2); /* IE 9 */
+            -moz-transform:scale(2,2); /* Firefox */
+            -webkit-transform:scale(2,2); /* Safari and Chrome */
+            -o-transform:scale(2,2); /* Opera */
+        }
+
+        .css-rotate{
+            margin:30px;
+            width:200px;
+            height:100px;
+            background-color:yellow;
+            /* Rotate div */
+            transform:rotate(9deg);
+            -ms-transform:rotate(9deg); /* Internet Explorer */
+            -moz-transform:rotate(9deg); /* Firefox */
+            -webkit-transform:rotate(9deg); /* Safari 和 Chrome */
+            -o-transform:rotate(9deg); /* Opera */
+        }
+
+        .css-matrix{
+            width:100px;
+            height:75px;
+            background-color:yellow;
+            border:1px solid black;
+            margin:50px;
+            transform:matrix(0.866,0.5,-0.5,0.866,0,0);
+            -ms-transform:matrix(0.866,0.5,-0.5,0.866,0,0); /* IE 9 */
+            -moz-transform:matrix(0.866,0.5,-0.5,0.866,0,0); /* Firefox */
+            -webkit-transform:matrix(0.866,0.5,-0.5,0.866,0,0); /* Safari and Chrome */
+            -o-transform:matrix(0.866,0.5,-0.5,0.866,0,0); /* Opera */
+        }
+
+        .animated_div {
+            width: 60px;
+            color: #ffffff;
+            background: red;
+            position: relative;
+            font-weight: bold;
+            padding: 20px;
+            display: inline-block;
+            margin: 20px;
+            border: 1px solid #888888;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            text-align: center;
+            opacity: 0.7;
+        }
+        .animated_rotatex{
+            width: 160px;
+            color: #ffffff;
+            background: red;
+            position: relative;
+            opacity: 0.7;
+            border-radius: 5px;
+            padding:20px;
+            margin:20px;
+            border: 1px solid #888888;
+            transition: all 1s;
+        }
+        .active_rotatex{
+            transform:rotateX(180deg);
+            -webkit-transform:rotateX(180deg); /* Safari and Chrome */
+            -moz-transform:rotateX(180deg); /* Firefox */
+        }
+        .active_rotatey{
+            transform:rotateY(180deg);
+            -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+            -moz-transform:rotateY(180deg); /* Firefox */
+        }
+    </style>
+</head>
+<body>
+<div style="display: block;">
+<h2>translate</h2>
+<div class="css-normal">
+    <div class="css-translate">
+        Hello World
+    </div>
+</div>
+</div>
+
+<div style="display: none;">
+<h2>skew</h2>
+<div class="css-normal">
+    正常
+</div>
+<div class="css-skew">
+    skew(30deg,20deg)
+</div>
+</div>
+
+<div style="display: none;">
+<h2>scale</h2>
+<div class="css-normal">
+    正常
+</div>
+<div class="css-scale">
+    scale(2,2)
+</div>
+</div>
+
+<div style="display: none;">
+<h2>rotate</h2>
+<div class="css-normal" style="height: 300px">
+    transform元素可以进行移动、缩放、转动、拉长或拉伸<br/>
+    matrix(n,n,n,n,n,n) 定义 2D 转换，使用六个值的矩阵。<br/>
+    translate(x,y)  定义 2D 转换，沿着 X 和 Y 轴移动元素。<br/>
+    translateX(n)   定义 2D 转换，沿着 X 轴移动元素。<br/>
+    translateY(n)   定义 2D 转换，沿着 Y 轴移动元素。<br/>
+    scale(x,y)  定义 2D 缩放转换，改变元素的宽度和高度。<br/>
+    scaleX(n)   定义 2D 缩放转换，改变元素的宽度。<br/>
+    scaleY(n)   定义 2D 缩放转换，改变元素的高度。<br/>
+    rotate(angle)   定义 2D 旋转，在参数中规定角度。<br/>
+    skew(x-angle,y-angle)   定义 2D 倾斜转换，沿着 X 和 Y 轴。<br/>
+    skewX(angle)    定义 2D 倾斜转换，沿着 X 轴。<br/>
+    skewY(angle)    定义 2D 倾斜转换，沿着 Y 轴。
+</div>
+<div class="css-rotate">
+    Hello World
+</div>
+</div>
+
+<div style="display: none;">
+<h2>matrix</h2>
+<div class="css-matrix">
+    matrix() 方法把所有 2D 转换方法组合在一起。
+</div>
+</div>
+
+<div style="display: none;">
+<h2>3d</h2>
+<div class="css-normal" style="height: 350px">
+    matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)   定义 3D 转换，使用 16 个值的 4x4 矩阵。<br/>
+    translate3d(x,y,z)  定义 3D 转化。<br/>
+    translateX(x)   定义 3D 转化，仅使用用于 X 轴的值。<br/>
+    translateY(y)   定义 3D 转化，仅使用用于 Y 轴的值。<br/>
+    translateZ(z)   定义 3D 转化，仅使用用于 Z 轴的值。<br/>
+    scale3d(x,y,z)  定义 3D 缩放转换。<br/>
+    scaleX(x)   定义 3D 缩放转换，通过给定一个 X 轴的值。<br/>
+    scaleY(y)   定义 3D 缩放转换，通过给定一个 Y 轴的值。<br/>
+    scaleZ(z)   定义 3D 缩放转换，通过给定一个 Z 轴的值。<br/>
+    rotate3d(x,y,z,angle)   定义 3D 旋转。<br/>
+    rotateX(angle)  定义沿 X 轴的 3D 旋转。<br/>
+    rotateY(angle)  定义沿 Y 轴的 3D 旋转。<br/>
+    rotateZ(angle)  定义沿 Z 轴的 3D 旋转。<br/>
+    perspective(n)  定义 3D 转换元素的透视视图。
+</div>
+<p class="animated_div" onClick="rotateDIV()" id="rotate1">
+ 点击  2d 旋转
+</p>
+<p class="animated_div" id="rotatey1" onclick="rotateYDIV()">
+    点击   3d 旋转
+</p>
+<p class="animated_rotatex" onclick="rotatex()" id="rotatex">
+    点击  通过 rotateX() 方法，元素围绕其 X 轴以给定的度数进行旋转。
+</p>
+<p class="animated_rotatex" onclick="rotatey()" id="rotatey">
+    点击  通过 rotateY() 方法，元素围绕其 Y 轴以给定的度数进行旋转。
+</p>
+<script>
+    'use strict'
+    var x,y,z,n=0,ny=0,rotINT,rotYINT,rotX=true,rotY=true;
+    function rotateDIV(){
+        x=document.getElementById("rotate1");
+        clearInterval(rotINT);
+        rotINT=setInterval("startRotate()",10)
+    }
+    function startRotate()
+    {
+        n=n+1;
+        x.style.transform="rotate(" + n + "deg)";
+        x.style.webkitTransform="rotate(" + n + "deg)";
+        x.style.OTransform="rotate(" + n + "deg)";
+        x.style.MozTransform="rotate(" + n + "deg)";
+        if (n==180 || n==360)
+        {
+            clearInterval(rotINT);
+            if (n==360){n=0}
+        }
+    }
+    function rotateYDIV()
+    {
+        y=document.getElementById("rotatey1");
+        clearInterval(rotYINT);
+        rotYINT=setInterval("startYRotate()",10);
+    }
+    function startYRotate()
+    {
+        ny=ny+1;
+        y.style.transform="rotateY(" + ny + "deg)";
+        y.style.webkitTransform="rotateY(" + ny + "deg)";
+        y.style.OTransform="rotateY(" + ny + "deg)";
+        y.style.MozTransform="rotateY(" + ny + "deg)";
+        if (ny==180 || ny>=360)
+        {
+            clearInterval(rotYINT);
+            if (ny>=360){ny=0}
+        }
+    }
+    function rotatex(){
+        if(!!rotX){
+            z=document.getElementById('rotatex');
+            z.className='animated_rotatex active_rotatex';
+            rotX=false;
+        }else{
+            rotX=true;
+            z=document.getElementById('rotatex');
+            z.className='animated_rotatex';
+        }
+
+    }
+    function rotatey(){
+        if(!!rotY){
+            z=document.getElementById('rotatey');
+            z.className='animated_rotatex active_rotatey';
+            rotY=false;
+        }else{
+            rotY=true;
+            z=document.getElementById('rotatey');
+            z.className='animated_rotatex';
+        }
+
+    }
+</script>
+</div>
+</body>
+</html>
+
+
+

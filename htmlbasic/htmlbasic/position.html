@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--charset定义文档的字符编码-->
+    <meta charset="utf-8">
+    <title>position介绍</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .relative{
+            position: relative;
+            background: #f6f6f6;
+            height:500px
+        }
+        p{
+            position: absolute;
+            background: #999;
+            top:10px;
+            left:20px
+        }
+        .fixed{
+            position: fixed;
+            bottom: 100px;
+            right: 0;
+            background: #333;
+            color: #fff;
+            padding: 20px;
+        }
+        .absolute{
+            position: absolute;
+            top: 200px;
+            left: 50px;
+            padding: 20px;
+            background: #666;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="relative">
+relative 定位
+    <p>
+        position属性有4中不同类型的定位方式.<br/>
+        static  没有定位,元素出现在正常的流中.<br/>
+        relative  生成相对定位元素,相对于其正常位置进行定位<br/>
+        fixed  生成绝对定位元素,相对于浏览器窗口进行定位<br/>
+        absolute 生成绝对定位的元素,相对于static定位意外的第一个父元素<br/>
+        这4个属性除STATIC以外都受TOP BOTTOM LEFT RIGHT影响
+    </p>
+</div>
+
+<div class="fixed"> fixed 定位</div>
+<div class="absolute"> absolute 定位</div>
+</body>
+</html>
+
+
+

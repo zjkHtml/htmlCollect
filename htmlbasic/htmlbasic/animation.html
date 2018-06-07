@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--charset定义文档的字符编码-->
+    <meta charset="utf-8">
+    <title>animation介绍</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .main{
+            position: relative;
+            background: #fff000;
+            padding:20px;
+            line-height: 18px;
+        }
+        .animate{
+            width: 90px;
+            height: 40px;
+            background: #92B901;
+            color: #ffffff;
+            position: relative;
+            font-weight: bold;
+            padding: 20px;
+            margin:40px;
+            animation: animated_div 5s 1;
+            -moz-animation: animated_div 5s 1;
+            -webkit-animation: animated_div 5s 1;
+            -o-animation: animated_div 5s 1;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+        }
+        .ex{
+            color:#ff0000;
+            font-weight: bold;
+        }
+        @keyframes animated_div
+        {
+            0%		{transform: rotate(0deg);left:0px;}
+            25%		{transform: rotate(20deg);left:0px;}
+            50%		{transform: rotate(0deg);left:500px;}
+            55%		{transform: rotate(0deg);left:500px;}
+            70%		{transform: rotate(0deg);left:500px;background:#1ec7e6;}
+            100%	{transform: rotate(-360deg);left:0px;}
+        }
+
+        @-webkit-keyframes animated_div
+        {
+            0%		{-webkit-transform: rotate(0deg);left:0px;}
+            25%		{-webkit-transform: rotate(20deg);left:0px;}
+            50%		{-webkit-transform: rotate(0deg);left:500px;}
+            55%		{-webkit-transform: rotate(0deg);left:500px;}
+            70%		{-webkit-transform: rotate(0deg);left:500px;background:#1ec7e6;}
+            100%	{-webkit-transform: rotate(-360deg);left:0px;}
+        }
+
+        @-moz-keyframes animated_div
+        {
+            0%   {-moz-transform: rotate(0deg);left:0px;}
+            25%  {-moz-transform: rotate(20deg);left:0px;}
+            50%  {-moz-transform: rotate(0deg);left:500px;}
+            55%  {-moz-transform: rotate(0deg);left:500px;}
+            70%  {-moz-transform: rotate(0deg);left:500px;background:#1ec7e6;}
+            100% {-moz-transform: rotate(-360deg);left:0px;}
+        }
+
+        @-o-keyframes animated_div
+        {
+            0%   {transform: rotate(0deg);left:0px;}
+            25%  {transform: rotate(20deg);left:0px;}
+            50%  {transform: rotate(0deg);left:500px;}
+            55%  {transform: rotate(0deg);left:500px;}
+            70%  {transform: rotate(0deg);left:500px;background:#1ec7e6;}
+            100% {transform: rotate(-360deg);left:0px;}
+        }
+    </style>
+</head>
+<body>
+<div class="animate">
+    animation
+</div>
+<div class="main">
+    <span class="ex">@keyframes</span>	规定动画。<br/>
+    <span class="ex">animation</span>	所有动画属性的简写属性，除了 animation-play-state 属性。<br/>
+    <span class="ex">animation-name</span>	规定 @keyframes 动画的名称。<br/>
+    <span class="ex">animation-duration</span>	规定动画完成一个周期所花费的秒或毫秒。默认是 0。<br/>
+    <span class="ex">animation-timing-function</span>	规定动画的速度曲线。默认是 "ease"。<br/>
+    <span class="ex">animation-delay</span>	   规定动画何时开始。默认是 0。<br/>
+    <span class="ex">animation-iteration-count</span>	规定动画被播放的次数。默认是 1。<br/>
+    <span class="ex">animation-direction</span>	规定动画是否在下一周期逆向地播放。默认是 "normal"。<br/>
+    <span class="ex">animation-play-state</span>	规定动画是否正在运行或暂停。默认是 "running"。<br/>
+    <span class="ex">animation-fill-mode</span>	规定对象动画时间之外的状态。
+</div>
+</body>
+</html>
+
+
+

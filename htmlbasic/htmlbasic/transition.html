@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--charset定义文档的字符编码-->
+    <meta charset="utf-8">
+    <title>transition介绍</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .transition_div{
+        background: #92B901;
+        color: #ffffff;
+        position: absolute;
+        padding: 20px ;  margin:20px;
+        -webkit-transition: -webkit-transform 1s,opacity 1s,background 1s,width 1s,height 1s,font-size 1s;
+        -webkit-border-radius: 5px;
+        -o-transition-property: width,height,-o-transform,background,font-size,opacity;
+        -o-transition-duration: 1s,1s,1s,1s,1s,1s;
+        -moz-transition-property: width,height,-o-transform,background,font-size,opacity;
+        -moz-transition-duration: 1s,1s,1s,1s,1s,1s;
+        transition-property: width,height,transform,background,font-size,opacity;
+        transition-duration: 1s,1s,1s,1s,1s,1s;
+        border-radius: 5px;
+            line-height: 20px;
+        }
+        .transition_div:hover
+        {
+            -moz-transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+            opacity:1;
+            background:#1ec7e6;
+            font-size:16px;
+        }
+        .ex{
+            color:#ff0000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="transition_div">
+    <span class="ex">transition</span>	   简写属性，用于在一个属性中设置四个过渡属性。<br/>
+    <span class="ex">transition-property</span>		规定应用过渡的 CSS 属性的名称。<br/>
+    <span class="ex">transition-duration</span>		定义过渡效果花费的时间。默认是 0。<br/>
+    <span class="ex">transition-timing-function</span>		规定过渡效果的时间曲线。默认是 "ease"。<br/>
+    <span class="ex">transition-delay</span>		规定过渡效果何时开始。默认是 0。
+</div>
+</body>
+</html>
+
+
+

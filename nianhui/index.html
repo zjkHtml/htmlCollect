@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>年会抽奖</title>
+    <script src="./jquery-1.10.1.min.js"></script>
+    <style>
+        * {margin: 0;padding: 0;font-family:"Microsoft YaHei"}
+        html{width:100%;height: 100%;}
+        body {background: url(img/bg.png) no-repeat center;background-size: 100% 100%; overflow: hidden;}
+        i{display: inline-block;width: 33px;height: 28px;margin-left: 5px;}
+
+        .wrap {padding: 80px 0;}
+        .logo {display: block;margin: 0 auto;width: 329px;}
+        .btn {width: 327px;height: 79px;text-align: center;line-height: 79px;font-size: 31px;color: #fff;margin: 0 auto; cursor: pointer; border:3px solid #fff;}
+        .btn.stoping{color:#ffc85d;border-color: #ffc85d;}
+        .btn.running{background: #ffc85d; color: #ba001f;border-color: #ffc85d;}
+        .btn.finish{background: #ffc85d; color: #ba001f;border-color: #ffc85d;}
+
+        .shadow{text-shadow:3px 3px 4px rgba(137,19,27,0.35),-3px -3px 4px rgba(137,19,27,0.35),0 0 8px rgba(255,255,255,0.35);}
+        .title{font-size: 90px;color: #ffc85d;text-align: center;padding: 60px 0;}
+        .prize{height: 280px; text-align: center;margin: 0 auto;}
+        .prize ul{list-style: none;display: inline-block;}
+        .prize li{list-style: none; background: url(img/win_num.png) no-repeat center;background-size: 100%;font-size: 50px;color: #fff;float: left;margin: 20px;white-space: nowrap; }
+        .prize li > span{display: inline-block; text-align: center;}
+
+        .p1, .p9{width:370px; margin-top: 23px;}
+        .p1 li, .p9 li{width: 330px;height: 114px;font-size: 90px; line-height: 114px;}
+        .p1 li > span, .p9 li > span{width: 110px;}
+
+        .p2{width: 560px; margin-top: -30px;}
+        .p2 li{width: 240px;height: 85px;font-size: 80px;line-height: 85px;}
+        .p2 li > span{width: 80px;}
+
+        .p3,.p4,.p5{width: 920px;margin-top: -10px;}
+        .p3 li,.p4 li,.p5 li{width: 190px;height: 65px;font-size: 60px;line-height: 65px;}
+        .p3 li > span,.p4 li > span,.p5 li > span{width: 60px;}
+
+        .p5{width: 1200px;}
+        .p5 li{margin: 20px 5px;}
+        a{position: absolute;display: inline-block;width: 20px;height: 20px;}
+        a.left{left: 0;bottom: 0;}
+        a.right{right: 0;bottom: 0;}
+        a.top{right: 0; top: 0;}
+        a.reset{left: 0;top: 0;}
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <img src="img/logo.png" class="logo"/>
+
+    <p class="title shadow">一等奖</p>
+    <div class="prize shadow">
+        <ul>
+            <li><span>0</span><span>0</span><span>0</span></li>
+        </ul>
+    </div>
+    <div class="btn">开始抽奖</div>
+    <a id="top" class="top" href="javascript:void(0);"></a>
+    <a id="left" class="left" href="javascript:void(0);"></a>
+    <a id="next" class="right" href="javascript:void(0);"></a>
+    <a id="reset" class="reset" href="javascript:void(0);"></a>
+</div>
+<script>
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('6 o=[],s=[],7=1o,9=5,h,k=1,S={},$n=$(".1d 1g"),18=$n.W(),$E=$(".E"),v={1k:{q:"\\1y\\B\\l",7:2,g:1},1i:{q:"\\1j\\B\\l",7:4,g:4},1l:{q:"\\1m\\B\\l",7:8,g:8},1s:{q:"\\1t\\B\\l",7:16,g:8},1u:{q:"\\1v\\B\\l",7:1x,g:12},R:{q:"\\1C\\1E\\l",7:1G,g:1}},i={};x();Z();y();$("#1h").A(3(){j.V("9");j.V("k");j.V("i")});$("#J").A(3(){J()});$("#1n").A(3(){9++;5<9&&(9=5);j.G("9",9);x();y()});$("#1r").A(3(){x();h="R";k=1;y()});3 Z(){o=[];m(6 a=1;a<=7;a++)o.D(a);o.1R(3(){1c.5<z.r()?-1:1})}3 y(){6 a=[],b=v[h];$(".1z").C(b.q);k*b.g>b.7?$E.t("H"):$E.u("H");$n.1L();$n.1O("1P",h);m(6 e=0;e<b.g;e++)a.D(18);$n.W(a.1e(""))}$E.A(3(){6 a=$(1f);a.F("P")||a.F("K")||(a.F("I")?(a.u("I"),a.C("\\13\\14\\M\\l")):a.F("H")?(a.C("\\13\\14\\M\\l"),a.u("I"),J()):a.F("N")?(a.u("N").t("K"),19(3(){a.u("K").t("I");a.C("\\1p\\1q\\1a\\l");"R"!=h&&(k++,j.G("k",k));6 b=v[h];b.g*k>b.7&&a.t("H")})):(a.t("P"),a.C("\\M\\l\\1a"),1b(3(){a.t("N").u("P")})))});3 J(){9--;1>9||(j.G("9",9),j.G("k",1),x(),y())}3 1b(a){m(6 b=v[h],e=$n.O("X"),d=0;d<b.g;d++)(3(a){S["Y"+a]=1w(3(){6 b=r(),b=o[b];Q(e.11(a),b)},w)})(d),d+1==b.g&&a()}3 19(a){m(6 b=v[h],e=$n.O("X"),d=[],c=0;c<b.g;c++)(3(c){1A(3(){1B(S["Y"+c]);m(6 f=r(),f=b.r||o[f];-1<s.1D(f);)f=r(),f=o[f];s.D(f);d.D(f);Q(e.11(c),f);c+1==b.g&&(i[h]=i[h]||[],i[h].D(d),j.G("i",17.1F(i)),a())},w*c)})(c)}3 r(){6 a;w<7?a=w*z.T(7/w):10<7&&(a=10*z.T(7/10));1c z.T(z.r()*a+(7-a))}3 Q(a,b){6 e=b.1I().1J("");a=a.O("1K");m(6 d=e.U,c=a.U;0<c;c--)d--,b=e[d],a[c-1].1M=b||"0"}3 x(){i=17.1N(j.L("i"))||{};k=15(j.L("k"))||1;9=15(j.L("9"))||5;h="p"+9;s=[];m(6 a 1Q i)m(6 b=0;b<i[a].U;b++)s=s.1H(i[a][b])};',62,116,'|||function|||var|total||pIndex|||||||batch|curPrize|record|localStorage|curBatch|u5956|for|container|pool||name|random|tmpPool|addClass|removeClass|config|100|loadCache|initPage|Math|click|u7b49|text|push|btn|hasClass|setItem|disabled|finish|next|stoping|getItem|u62bd|running|find|starting|setPrize|p9|timer|floor|length|removeItem|html|li|interval|initPool||eq||u5f00|u59cb|parseInt||JSON|itemTpl|stop|u4e2d|start|return|prize|join|this|ul|reset|p2|u4e8c|p1|p3|u4e09|top|450|u606d|u559c|left|p4|u56db|p5|u4e94|setInterval|36|u4e00|title|setTimeout|clearInterval|u9057|indexOf|u73e0|stringify|999|concat|toString|split|span|empty|innerText|parse|attr|class|in|sort'.split('|'),0,{}));
+</script>
+</body>
+</html>

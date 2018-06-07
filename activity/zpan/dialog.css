@@ -1,0 +1,961 @@
+@font-face {
+	font-family: iconfont;
+	src: url(http://at.alicdn.com/t/font_wsni5ytblm78pvi.eot);
+	src: url(http://at.alicdn.com/t/font_wsni5ytblm78pvi.eot?#iefix) format('embedded-opentype'), url(http://at.alicdn.com/t/font_wsni5ytblm78pvi.woff) format('woff'), url(http://at.alicdn.com/t/font_wsni5ytblm78pvi.ttf) format('truetype'), url(http://at.alicdn.com/t/font_wsni5ytblm78pvi.svg#iconfont) format('svg')
+}
+
+.iconfont {
+	font-family: iconfont!important;
+	font-size: 16px;
+	color: #FFF;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: .2px;
+	-moz-osx-font-smoothing: grayscale
+}
+
+a {
+	text-decoration: none;
+}
+
+.flex {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.flex-hr {
+	-webkit-box-pack: justify;
+	-moz-justify-content: space-around;
+	-webkit-justify-content: space-around;
+	justify-content: space-around;
+}
+
+
+/*doll dialog start*/
+
+.popShowPrize {
+	position: fixed;
+	z-index: 10000;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 0 1rem;
+	box-sizing: border-box;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, .85);
+	display: none;
+	cursor: pointer;
+}
+
+.dialog_1-closetc {
+	width: 1.925rem;
+	height: 1.925rem;
+	font-size: 1rem;
+	color: #FFFFFF;
+	position: absolute;
+	right: -4px;
+	top: 13px;
+	background: url(https://buyimg.bianxianmao.com/dist/dollModel/images/close.png) no-repeat center;
+	background-size: 100% 100%;
+	z-index: 9999;
+}
+
+.dialog_1-showPrize-dialog {
+	width: 85%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -45%);
+	-webkit-transform: translate(-50%, -45%);
+	z-index: 999;
+}
+
+.dialog_1-showPrize-sunshine,
+.dialog_1-showPrize-circle {
+	width: 100%;
+	position: absolute;
+	top: 42%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	z-index: -1;
+}
+
+.dialog_1-showPrize-circle {
+	top: 37%;
+}
+
+.dialog_1-showPrize-bg {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	top: 20%;
+	left: 0;
+	animation: fadeInit 0.8s linear infinite alternate;
+	-webkit-animation: fadeInit 0.8s linear infinite alternate;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+.dialog_1-modal-body {
+	width: 90%;
+	height: auto;
+	padding: 0 0.6rem;
+	padding-top: 2.125rem;
+	padding-bottom: 1.75rem;
+	box-sizing: border-box;
+	background: url(https://buyimg.bianxianmao.com/dist/dollModel/images/quanbg.png) no-repeat center;
+	background-size: 100% 100%;
+	border-radius: 5px;
+	position: relative;
+	top: -2.5rem;
+	z-index: -1;
+	margin: 0 auto;
+}
+
+.dialog_1-modal-header {
+	width: 100%;
+	height: 5.65rem;
+	background: url(https://buyimg.bianxianmao.com/dist/dollModel/images/youwin.png) no-repeat center;
+	background-size: 100% 100%;
+}
+
+.dialog_1-prizecontent {
+	width: 10.5rem;
+	height: 1.35rem;
+	overflow: hidden;
+	line-height: 1.35rem;
+	background: url(https://buyimg.bianxianmao.com/dist/dollModel/images/content.png) no-repeat center;
+	background-size: 100% 100%;
+	font-size: 0.7rem;
+	color: #FFFFFF;
+	text-align: center;
+	margin: 0 auto;
+	margin-bottom: 0.5rem;
+}
+
+.dialog_1-coupon-wrapper {
+	margin-top: 0.5rem;
+}
+
+.dialog_1-coupon-detail {
+	margin-top: 0.75rem;
+	font-size: 0.65rem;
+	color: #fc5643;
+}
+
+.dialog_1-coupon-date {
+	font-size: 0.65rem;
+	color: #333333;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.dialog_1-goto {
+	width: 11rem;
+	height: 2.65rem;
+	position: absolute;
+	left: 50%;
+	margin-left: -5.5rem;
+	text-align: center;
+	line-height: 2.65rem;
+	letter-spacing: 2px;
+	font-size: 0.9rem;
+	color: #ad5c0e;
+	background: url(https://buyimg.bianxianmao.com/dist/dollModel/images/go.png) no-repeat center;
+	background-size: 100% 100%;
+	-webkit-animation: skip .8s linear infinite alternate;
+	-moz-animation: skip .8s linear infinite alternate;
+	animation: skip .8s linear infinite alternate;
+}
+
+@-webkit-keyframes fadeInit {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0.4;
+	}
+}
+
+@keyframes fadeInit {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0.4;
+	}
+}
+
+@-webkit-keyframes skip {
+	from {
+		-webkit-transform: scale(0.98);
+		transform: scale(0.98)
+	}
+	100% {
+		-webkit-transform: scale(1.01);
+		transform: scale(1.01)
+	}
+}
+
+@-moz-keyframes skip {
+	from {
+		-moz-transform: scale(0.98);
+		transform: scale(0.98)
+	}
+	100% {
+		-moz-transform: scale(1.01);
+		transform: scale(1.01)
+	}
+}
+
+@keyframes skip {
+	from {
+		-webkit-transform: scale(0.98);
+		-moz-transform: scale(0.98);
+		transform: scale(0.98)
+	}
+	100% {
+		-webkit-transform: scale(1.01);
+		-moz-transform: scale(1.01);
+		transform: scale(1.01)
+	}
+}
+
+
+/*doll dialog end*/
+
+
+/*rubbon**/
+
+.sawtooth-up {
+	position: absolute;
+	width: 100%;
+	height: 6px;
+	top: 3px;
+	left: 0px;
+}
+
+.sawtooth-down {
+	position: absolute;
+	width: 100%;
+	height: 6px;
+	bottom: 3px;
+	left: 0px;
+}
+
+.sawtooth-up span,
+.sawtooth-down span {
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	margin: 0 3px;
+	background-color: #FFFEFF;
+	border-radius: 50% 50%;
+}
+
+.dialog_2-closetc {
+	font-size: 1rem;
+	color: #FFFFFF;
+	position: absolute;
+	right: 13px;
+	top: 20px;
+	z-index: 9999;
+}
+
+.dialog_2-showPrize-dialog {
+	width: 85%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -45%);
+	-webkit-transform: translate(-50%, -45%);
+	z-index: 999;
+}
+
+.dialog_2-showPrize-sunshine,
+.dialog_2-showPrize-circle {
+	width: 96%;
+	position: absolute;
+	top: 44%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	z-index: -1;
+}
+
+.dialog_2-showPrize-circle {
+	top: 37%;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+.dialog_2-modal-body {
+	width: 100%;
+	height: auto;
+	padding: 0 1rem;
+	padding-top: 1.125rem;
+	box-sizing: border-box;
+	background-color: #FFFFFF;
+	border: 4px solid #ffe6df;
+	border-radius: 5px;
+}
+
+.dialog_2-modal-header {
+	width: 13.4rem;
+	position: absolute;
+	top: -2.5rem;
+	left: 50%;
+	margin-left: -6.7rem;
+}
+
+.star {
+	position: absolute;
+	top: 0;
+	animation: startStyle 1s linear infinite alternate;
+	-webkit-animation: startStyle 1s linear infinite alternate;
+}
+
+.star:nth-child(2) {
+	display: block;
+	width: 0.55rem;
+	height: 0.55rem;
+	left: 4rem;
+	background: url(https://buyimg.bianxianmao.com/dist/awardModel/images/start1.png) no-repeat center;
+	background-size: 100% 100%;
+}
+
+.star:nth-child(3) {
+	display: block;
+	width: 0.75rem;
+	height: 0.75rem;
+	top: -0.4rem;
+	left: 5.5rem;
+	background: url(https://buyimg.bianxianmao.com/dist/awardModel/images/start2.png) no-repeat center;
+	background-size: 100% 100%;
+}
+
+.star:nth-child(4) {
+	display: block;
+	width: 0.55rem;
+	height: 0.55rem;
+	left: 9rem;
+	background: url(https://buyimg.bianxianmao.com/dist/awardModel/images/start3.png) no-repeat center;
+	background-size: 100% 100%;
+}
+
+.star:nth-child(5) {
+	display: block;
+	width: 0.875rem;
+	height: 0.875rem;
+	left: 7.5rem;
+	top: -0.3rem;
+	background: url(https://buyimg.bianxianmao.com/dist/awardModel/images/start4.png) no-repeat center;
+	background-size: 100% 100%;
+}
+
+.dialog_2-prizecontent {
+	font-size: 0.7rem;
+	color: #333333;
+	text-align: center;
+}
+
+.dialog_2-coupon-wrapper {
+	margin-top: 0.5rem;
+}
+
+.dialog_2-coupon-detail {
+	margin-top: 0.75rem;
+	font-size: 0.65rem;
+	color: #ff681b;
+}
+
+.dialog_2-coupon-image {
+	width: 13.55rem;
+	padding: 6px 0;
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+}
+
+@media screen and (max-width:360px) {
+	.dialog_2-coupon-image {
+		width: 10.55rem;
+		padding: 6px 0;
+		overflow: hidden;
+		position: relative;
+		margin: 0 auto;
+	}
+}
+
+.dialog_2-coupon-date {
+	font-size: 0.65rem;
+	color: #333333;
+	margin-top: 0.5rem;
+	margin-bottom: 0.75rem;
+}
+
+.dialog_2-goto {
+	width: 10.5rem;
+	height: 2rem;
+	font-size: 0.9rem;
+	position: relative;
+	left: 50%;
+	margin-left: -5.25rem;
+	margin-bottom: 0.6rem;
+	background: url(https://buyimg.bianxianmao.com/80/g4106393100323567696) no-repeat center;
+	background-size: 100% 100%;
+	text-align: center;
+	line-height: 1.6rem;
+	letter-spacing: 2px;
+	color: #FFFFFF;
+	-webkit-animation: skip .8s linear infinite alternate;
+	-moz-animation: skip .8s linear infinite alternate;
+	animation: skip .8s linear infinite alternate;
+}
+
+
+
+@-webkit-keyframes skip {
+	from {
+		-webkit-transform: scale(0.98);
+		transform: scale(0.98)
+	}
+	100% {
+		-webkit-transform: scale(1.01);
+		transform: scale(1.01)
+	}
+}
+
+@-moz-keyframes skip {
+	from {
+		-moz-transform: scale(0.98);
+		transform: scale(0.98)
+	}
+	100% {
+		-moz-transform: scale(1.01);
+		transform: scale(1.01)
+	}
+}
+
+@keyframes skip {
+	from {
+		-webkit-transform: scale(0.98);
+		-moz-transform: scale(0.98);
+		transform: scale(0.98)
+	}
+	100% {
+		-webkit-transform: scale(1.01);
+		-moz-transform: scale(1.01);
+		transform: scale(1.01)
+	}
+}
+
+@keyframes startStyle {
+	from {
+		opacity: 0.7;
+		transform: scale(0.8);
+		-webkit-transform: scale(0.8);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+		-webkit-transform: scale(1);
+	}
+}
+
+@-webkit-keyframes startStyle {
+	from {
+		opacity: 0.7;
+		transform: scale(0.8);
+		-webkit-transform: scale(0.8);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+		-webkit-transform: scale(1);
+	}
+}
+
+.ribbon {
+	display: block;
+	width: 0.35rem;
+	height: 0.5rem;
+	position: absolute;
+	top: 0;
+	animation: ribbon 4s linear 1s infinite;
+	-webkit-animation: ribbon 4s linear 1s infinite;
+}
+
+@keyframes ribbon {
+	0% {
+		opacity: 1;
+		transform: translate(0, 0);
+		-webkit-transform: translate(0, 0);
+	}
+	100% {
+		opacity: 0;
+		transform: translate(-10px, 80px);
+		-webkit-transform: translate(-10px, 80px);
+	}
+}
+
+@-webkit-keyframes ribbon {
+	0% {
+		opacity: 1;
+		transform: translate(0, 0);
+		-webkit-transform: translate(0, 0);
+	}
+	100% {
+		opacity: 0;
+		transform: translate(-10px, 80px);
+		-webkit-transform: translate(-10px, 80px);
+	}
+}
+
+.ribbon:nth-of-type(1) {
+	top: 2rem;
+	left: 1.25rem;
+	background: url(https://buyimg.bianxianmao.com/dist/awardModel/images/img1.png) no-repeat center;
+	background-size: 100% 100%;
+}
+
+.ribbon:nth-of-type(2) {
+	top: 4.35rem;
+	left: 0.75rem;
+	background: url(https://buyimg.bianxianmao.com/dist/awardModel/images/img2.png) no-repeat center;
+	background-size: 100% 100%;
+}
+
+.ribbon:nth-of-type(3) {
+	top: 6rem;
+	left: 2.8rem;
+	background: url(https://buyimg.bianxianmao.com/dist/awardModel/images/img3.png) no-repeat center;
+	background-size: 100% 100%;
+}
+
+.ribbon:nth-of-type(4) {
+	top: 9.8rem;
+	left: -1rem;
+	background: url(https://buyimg.bianxianmao.com/dist/awardModel/images/img5.png) no-repeat center;
+	background-size: 100% 100%;
+}
+
+.ribbon:nth-of-type(5) {
+	top: 10.6rem;
+	left: 1.4rem;
+	background: url(https://buyimg.bianxianmao.com/dist/awardModel/images/img4.png) no-repeat center;
+	background-size: 100% 100%;
+}
+
+.ribbon:nth-of-type(6) {
+	top: 13rem;
+	left: 0rem;
+	background: url(https://buyimg.bianxianmao.com/dist/awardModel/images/img7.png) no-repeat center;
+	background-size: 100% 100%;
+}
+
+.ribbon:nth-of-type(7) {
+	top: 13rem;
+	right: 1.5rem;
+	background: url(https://buyimg.bianxianmao.com/dist/awardModel/images/img6.png) no-repeat center;
+	background-size: 100% 100%;
+}
+
+.ribbon:nth-of-type(8) {
+	top: 15.9rem;
+	left: 1.4rem;
+	background: url(https://buyimg.bianxianmao.com/dist/awardModel/images/img8.png) no-repeat center;
+	background-size: 100% 100%;
+}
+
+.ribbon:nth-of-type(9) {
+	top: 2rem;
+	right: 2.5rem;
+	background: url(https://buyimg.bianxianmao.com/dist/awardModel/images/img9.png) no-repeat center;
+	background-size: 100% 100%;
+}
+
+.ribbon:nth-of-type(10) {
+	top: 6rem;
+	right: -0.75rem;
+	background: url(https://buyimg.bianxianmao.com/dist/awardModel/images/img4.png) no-repeat center;
+	background-size: 100% 100%;
+}
+
+.ribbon:nth-of-type(11) {
+	top: 8rem;
+	right: 4.7rem;
+	background: url(https://buyimg.bianxianmao.com/dist/awardModel/images/img10.png) no-repeat center;
+	background-size: 100% 100%;
+}
+
+.ribbon:nth-of-type(12) {
+	top: 10rem;
+	right: 0.3rem;
+	background: url(https://buyimg.bianxianmao.com/dist/awardModel/images/img6.png) no-repeat center;
+	background-size: 100% 100%;
+}
+
+.ribbon:nth-of-type(13) {
+	top: 12rem;
+	right: -1rem;
+	background: url(https://buyimg.bianxianmao.com/dist/awardModel/images/img2.png) no-repeat center;
+	background-size: 100% 100%;
+}
+
+
+/******砸金蛋弹窗 开始****/
+
+#dialog4 .showPrize-dialog {
+	width: 15rem;
+	height: 16.35rem;
+	background-image: url(https://buyimg.bianxianmao.com/dist/eggModel/images/eggpopbg.png);
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	padding-top: .5rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%)
+}
+
+#dialog4 .showPrize-dialog .tickitImg {
+	width: 13rem;
+	height: 6.5rem;
+	margin: auto;
+	border-radius: 5px;
+	padding-top: .5rem
+}
+
+#dialog4 .showPrize-dialog .tickitImg img {
+	width: 100%
+}
+
+#dialog4 .showPrize-dialog .detail {
+	width: 15rem;
+	height: 8.3rem;
+	background-image: url(https://buyimg.bianxianmao.com/dist/eggModel/images/egggongxi.png);
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	margin-top: 1.25rem
+}
+
+#dialog4 .showPrize-dialog .detail .topic {
+	width: 7rem;
+	height: 1.25rem;
+	border-radius: 4px;
+	background-color: #e22427;
+	text-align: center;
+	position: absolute;
+	top: 3rem;
+	left: 50%;
+	color: #fff;
+	font-size: .6rem;
+	margin-left: -3.5rem;
+	line-height: 1.25rem
+}
+
+#dialog4 .showPrize-dialog .detail .goto {
+	width: 13.35rem;
+	height: 2.65rem;
+	background-image: url(https://buyimg.bianxianmao.com/dist/eggModel/images/eggbtn.png);
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 50%;
+	margin-left: -6.675rem;
+	bottom: .5rem;
+	text-align: center;
+	line-height: 2.325rem;
+	color: #c45112;
+	font-size: 1.2rem
+}
+
+#dialog4 .sunshine {
+	width: 19.625rem;
+	height: 18.7rem;
+	background: url(https://buyimg.bianxianmao.com/dist/bxm_base/images/sunshine.png) no-repeat center;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -10.3125rem;
+	margin-left: -9.35rem;
+	animation: circle 8s linear infinite;
+	-webkit-animation: circle 8s linear infinite;
+}
+
+#dialog4 .guang {
+	width: 18rem;
+	height: 24rem;
+	background: url(https://buyimg.bianxianmao.com/dist/bxm_base/images/guang.png) no-repeat center;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 42%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+}
+
+#dialog4 .closetc {
+	display: block;
+	width: 1.6rem;
+	height: 1.6rem;
+	text-align: center;
+	line-height: 1.6rem;
+	font-size: 1.6rem;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
+@keyframes circle {
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes circle {
+	from {
+		-webkit-transform: rotate(0);
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}
+/******砸金蛋弹窗 结束****/
+
+/******活动工具中弹窗优化 start****/
+#dialog5 .card-sunshine {
+	width: 17.5rem;
+	height: 17.5rem;
+	background: url(https://buyimg.bianxianmao.com/dist/dialogModel/images/rotate.png) no-repeat center;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 62%;
+	left: 50%;
+	margin-top: -12.3125rem;
+	margin-left: -8.75rem;
+	animation: circle 10s linear infinite;
+	-webkit-animation: circle 10s linear infinite;
+}
+#dialog5 .m-box {
+    width: 17.5rem;
+    height: 18rem;
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    margin-top: -12.3125rem;
+    margin-left: -9rem;
+}
+#dialog5 .showPrize-dialog {
+	width: 16.8rem;
+	height: 19.125rem;
+	padding-top: .5rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	margin-left:-8.4rem;
+	margin-top:-9.5625rem;
+	webkit-animation: showModal .5s ease-in-out;
+	animation: showModal .5s ease-in-out;
+}
+#dialog5 .showPrize-dialog .card-bg {
+	width: 16.8rem;
+	height: 11.5rem;
+	background-image: url(https://buyimg.bianxianmao.com/dist/dialogModel/images/cardbg_universal.png);
+	background-size: 100% 100%;
+	background-position: center top;
+	background-repeat: no-repeat;
+	margin: auto;
+	padding-top: .5rem;
+	transform: translate(0,6rem);
+	-webkit-transform: translate(0,6rem);
+	animation:move 0.5s linear 0.4s forwards;
+	-webkit-animation:move 0.5s linear 0.4s forwards;
+}
+#dialog5 .showPrize-dialog .card-bg img {
+	width: 13.025rem;
+	height: 6.125rem;
+	display: block;
+	margin:4.2rem auto 0;
+}
+#dialog5 .showPrize-dialog .red-bg {
+	width: 14.75rem;
+	height: 10.25rem;
+	background-image: url(https://buyimg.bianxianmao.com/dist/dialogModel/images/redbg.png);
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	margin: -3.89rem auto 0;
+	z-index: -1;
+	animation:scale 0.2s linear forwards;
+	-webkit-animation:scale 0.2s linear forwards;
+}
+#dialog5 .showPrize-dialog .detail {
+	width: 14.75rem;
+	height: 7.55rem;
+	background-image: url(https://buyimg.bianxianmao.com/dist/dialogModel/images/redbag.png);
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	margin:-7.5rem auto 0;
+	animation:scale 0.2s linear forwards;
+	-webkit-animation:scale 0.2s linear forwards;
+}
+#dialog5 .showPrize-dialog .detail .topic {
+	width: 11.25rem;
+	height: 1.45rem;
+	border-radius: 4px;
+	text-align: center;
+	position: absolute;
+	top: 2.5rem;
+	left: 50%;
+	color: #fff;
+	font-size: .7rem;
+	margin-left: -5.625rem;
+	line-height: 1.45rem
+}
+#dialog5 .showPrize-dialog .detail .goto {
+	width: 11.75rem;
+	height: 2.6rem;
+	background-image: url(https://buyimg.bianxianmao.com/dist/dialogModel/images/btn.png);
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 50%;
+	margin-left: -5.875rem;
+	bottom: 0.2rem;
+	text-align: center;
+	line-height: 2.4rem;
+	color: #ef4511;
+	font-size: 1.2rem;
+    text-shadow: 1px 1px 2px #fff;
+    -webkit-text-shadow: 1px 1px 2px #fff;
+}
+#dialog5 .showPrize-dialog .detail .goto:after {
+    content:'';
+    width:1.15rem;
+    height:2.65rem;
+    position: absolute;
+    left:0;
+    top:0;
+}
+.once-again {
+    width:4.45rem;
+    height:1.325rem;
+    line-height: 1.325rem;
+    text-align: center;
+    background: transparent;
+    border:1px solid #FFF;
+	position: absolute;
+	top: 19.0rem;
+	left: 50%;
+	margin-left: -2.275rem;
+    border-radius: 2px;
+    color: #FFF;
+    font-weight: normal;
+    font-size: 14px;
+}
+#dialog5 .close-btn {
+	display: block;
+	width: 0.9rem;
+	height: 0.9rem;
+	text-align: center;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+#dialog5 .close-btn > img {
+	width: 100%;
+	height: 100%;
+}
+@-webkit-keyframes showModal {
+	from {
+		-webkit-transform: scale(.1);
+		transform: scale(.1)
+	}
+
+	to {
+		-webkit-transform: scale(1);
+		transform: scale(1)
+	}
+}
+
+@keyframes showModal {
+	from {
+		-webkit-transform: scale(.1);
+		transform: scale(.1)
+	}
+
+	to {
+		-webkit-transform: scale(1);
+		transform: scale(1)
+	}
+}
+@keyframes scale {
+	from {
+		transform: scale(0);
+        -webkit-transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+@-webkit-keyframes scale {
+	from {
+		-webkit-transform: scale(0);
+        transform: scale(0);
+	}
+	to {
+		-webkit-transform: scale(1);
+        transform: scale(1);
+	}
+}
+@keyframes move {
+	from {
+		-webkit-transform: translate(0,6rem);
+        transform: translate(0,6rem);
+	}
+	to {
+        -webkit-transform: translate(0,0);
+		transform: translate(0,0);
+	}
+}
+@-webkit-keyframes move {
+	from {
+		-webkit-transform: translate(0,6rem);
+        transform: translate(0,6rem);
+	}
+	to {
+        -webkit-transform: translate(0,0);
+		transform: translate(0,0);
+	}
+}
+/******活动工具中弹窗优化 end****/

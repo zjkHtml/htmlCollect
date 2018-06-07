@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--charset定义文档的字符编码-->
+    <meta charset="utf-8">
+    <title>localstorage+sessionstorage介绍</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+//    localStorage 方法存储的数据没有时间限制。第二天、第二周或下一年之后，数据依然可用。
+if (localStorage.pagecount)
+{
+    localStorage.pagecount=Number(localStorage.pagecount) +1;
+}
+else
+{
+    localStorage.pagecount=1;
+}
+document.write("<p style='color:#ff0000'>localstorage浏览次数"+ localStorage.pagecount + "次</p>");
+//sessionStorage 方法针对一个 session 进行数据存储。当用户关闭浏览器窗口后，数据会被删除。
+if (sessionStorage.pagecount)
+{
+    sessionStorage.pagecount=Number(sessionStorage.pagecount) +1;
+}
+else
+{
+    sessionStorage.pagecount=1;
+}
+document.write("<p style='color:#ff0000'>sessionstorage浏览次数 "+sessionStorage.pagecount+" 次</p>");
+</script>
+<p>刷新页面会看到计数器在增长。</p>
+
+<p>请关闭浏览器窗口，然后再试一次</p>
+</body>
+</html>

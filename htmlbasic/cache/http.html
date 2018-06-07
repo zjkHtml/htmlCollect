@@ -1,0 +1,73 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>http协议</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<!-- UC强制全屏 -->
+	<meta name="full-screen" content="no">
+	<!-- QQ应用模式 -->
+	<meta name="x5-page-mode" content="app">
+	<script type="text/javascript" src="../jq/jquery-1.10.1.min.js"></script>
+	<style type="text/css">
+		*{font-size: 14px;line-height: 1.5}
+		li{margin: 5px 0;}
+		pre{background-color: #fafafa;padding: 5px;border:1px solid #ddd;margin: 0;display: none;}
+		.btn{margin-left: 10px;}
+		.demo{padding: 10px;border:1px solid #ddd;margin: 10px;}
+	</style>
+</head>
+
+<body>
+	<ul>
+		<li>概念：<a class="btn" href="###">显示</a>
+		<pre>http协议 超文本（html文档）传输协议。
+其实就是两台计算机通信的一个规则，就跟咱们写接口时的约定一样。
+<img src="img/level.png" />
+		</pre>
+		</li>
+		<li>特点：<a class="btn" href="###">显示</a>
+		<pre>
+1、客户/服务器模式：客户端发起，服务器响应
+2、简单快速：只需要请求方法和路径，服务器的规模小，速度快
+3、灵活：允许传输任意类型数据
+4、无状态：服务器不会记录上一次传输的任何状态信息
+		 </pre>
+		</li>
+		<li>工作流程：<a class="btn" href="###">显示</a>
+		<pre>
+1、建立连接：点击某个链接
+2、客户端发送请求给服务器：方法 路径 协议版本  header头信息  请求数据
+3、服务器响应：状态行：协议版本 状态码 服务消息  响应头  响应数据
+4、客户端收到消息，通过浏览器显示，并关闭连接
+<img src="img/request.png" />
+		</pre>
+		</li>
+		<li>TCP协议<a class="btn" href="###">显示</a>
+		<pre>
+http是基于传输层TCP协议，TCP是端到端的面向连接的协议，在http开始传输之前，先要建立TCP连接
+TCP连接就需要进行 三次握手
+<img src="img/tcp.png" />
+		</pre>
+		</li>
+	</ul>
+<script type="text/javascript">
+	$(function(){
+		$('.btn').click(function(){
+			var $sender = $(this),
+				$pre = $sender.next('pre');
+			if($pre.is(':visible')){
+				$pre.hide();
+				$sender.text('显示');
+			} else {
+				$pre.show();
+				$sender.text('隐藏');
+			}
+		});
+	});
+</script>
+</body>
+
+</html>

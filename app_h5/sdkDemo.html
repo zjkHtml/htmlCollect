@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>端内 h5 调用相机接口</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <style type="text/css">
+        body{
+            margin: .8rem;
+        }
+        h1{
+            font-size: 1rem;
+        }
+        .box{
+            border: 1px solid #e6e6e6;
+            padding: 1rem;
+            border-radius: 5px;
+            background: #eee;
+            margin-bottom:.5rem;
+            font-size: .8rem;
+        }
+        .box label{
+            display: block;
+            margin-bottom: .5rem;
+        }
+
+        button, .btn{
+            position: relative;
+            background: #ffa11b;
+            color: #fff;
+            padding: .5rem;
+            font-size: .8rem;
+            border:none;
+            border-radius: .3rem;
+            margin-bottom:.5rem;
+            margin-right: .5rem;
+            display: inline-block;
+            width: 9rem;
+            text-decoration: none;
+            text-align: center;
+            overflow: hidden;
+        }
+        .btn input{
+            position: absolute;
+            top: 0; left: 0;right: 0;bottom: 0;
+            opacity: 0;
+        }
+        img{width: 8rem;height: 8rem;}
+    </style>
+</head>
+<body onload="onLoad()">
+    <h1>端内 h5 调用相机接口</h1>
+    <div id="msg" class="box"></div>
+    <div class="box">
+        <label>H5 原生功能</label>
+        <button onclick="onH5GetLocation()">获取当前地理位置</button><br/><span id="h5Local"></span><br/>
+        <img id='h5Img' src="img/head_bg.jpg"/><br/>
+        <a href="javascript:;" class="btn"> 选择照片
+            <input id='h5File' name="h5File" type="file" onchange="onPreviewImg()" accept="image/*;capture=camera">
+        </a>
+    </div>
+
+    <div class="box">
+        <label>app 调用</label>
+        <button onclick="onAppGetLocation()">获取当前地理位置</button><br/><span id="appLocal"></span><br/>
+        <img id='appImg' src="img/head_bg.jpg"/><br/>
+        <button onclick="onTakePicture">相机拍照</button>
+        <button onclick="onGetPicture">相册选取</button>
+    </div>
+    <script type="text/javascript">
+    function onLoad() {
+        var lblMsg = document.getElementById('msg');
+        if(isWeiXin()){
+            lblMsg.innerText = "微信浏览器";
+            return;
+        }
+        if(isAppEmbed()){
+            lblMsg.innerText = "简单借款内嵌浏览器";
+            return;
+        }
+        lblMsg.innerText = "系统浏览器或其他app内嵌浏览器";
+
+    }
+    function onH5GetLocation(){
+        var h5Local = document.getElementById('h5Local');
+         navigator.geolocation.getCurrentPosition(function (p) {
+            var latitude = p.coords.latitude;//纬度
+            var longitude = p.coords.longitude;
+            h5Local.innerHTML = "latitude:"+latitude + "<br/>longitude:"+longitude;
+          
+        }, function (e) {//错误信息
+            var msg = 'code:' + e.code + " message:" + e.message;
+            h5Local.innerHTML = msg;
+        });
+    }
+    function onPreviewImg(){
+        var h5File = document.getElementById('h5File'),
+            h5Img = document.getElementById('h5Img');
+        var imgFile = h5File.files[0];
+        var img = new Image();
+        img.src = window.URL.createObjectURL(imgFile);
+        img.onload = function(){
+            var canvas = document.createElement("canvas");
+            canvas.setAttribute("width", h5Img.clientWidth);
+            canvas.setAttribute("height", h5Img.clientHeight);
+            var cxt = canvas.getContext("2d");
+            cxt.drawImage(this, 0, 0, h5Img.clientWidth, h5Img.clientHeight);
+            var rio = 0.9;
+            let imgData = canvas.toDataURL('image/jpeg', rio);
+            h5Img.setAttribute('src',imgData);
+        }
+    }
+    function onAppGetLocation(){
+        // window.bridge.getLocation(String option, String callBack)
+        var option = {
+
+        };
+        window.bridge.getLocation(JSON.stringify(option),'cbGetLocation');
+    }
+    function cbGetLocation(res){
+        var response = JSON.parse(res);
+        var appLocal = document.getElementById('appLocal');
+
+        if(response.resultCode == 200){
+            h5Local.innerHTML = "latitude:"+response.result.latitude + "<br/>longitude:"+response.result.longitude;
+        } else {
+            h5Local.innerHTML = response.result;
+        }
+    }
+    function onTakePicture(){
+        // window.camera.takePicture(String option, String callBack)
+        var option = {
+
+        };
+        window.camera.takePicture(JSON.stringify(option), 'cbTakePicture');
+    }
+    function cbTakePicture(res){
+        var response = JSON.parse(res);
+        var appImg = document.getElementById('appImg');
+
+        if(response.resultCode == 200){
+            appImg.setAttribute('src',response.result);
+        } else {
+            alert(response.result);
+        }
+    }
+    function onGetPicture(){
+        // window.camera.getPicture(String option, String callBack);
+        var option = {
+
+        };
+        window.camera.takePicture(JSON.stringify(option), 'cbGetPicture');
+    }
+    function cbGetPicture(res){
+        var response = JSON.parse(res);
+        var appImg = document.getElementById('appImg');
+
+        if(response.resultCode == 200){
+            appImg.setAttribute('src',response.result);
+        } else {
+            alert(response.result);
+        }
+    }
+    
+
+
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+        if (r != null) return unescape(r[2]); return null; //返回参数值
+    }
+    function isWeiXin(){
+        var ua = window.navigator.userAgent.toLowerCase();
+        return ua.match(/MicroMessenger/i) == 'micromessenger';
+    }
+    function isAppEmbed() { // 内嵌我们自己的app里
+        var ua = window.navigator.userAgent.toLowerCase();
+        return ua.match(/sudaixiong_android/i) == 'sudaixiong_android' || 
+        ua.match(/sudaixiong_ios/i) == 'sudaixiong_ios';
+    }
+    </script>
+</body>
+</html>

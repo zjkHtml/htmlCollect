@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--charset定义文档的字符编码-->
+    <meta charset="utf-8">
+    <title>css样式介绍</title>
+    <style>
+        *{
+            font-size: 14px;
+            color:#fff;
+            line-height: 24px;;
+            padding:20px;
+        }
+        p{
+            background:#ff0000 url('bak.jpg') no-repeat left center ;
+            padding:20px;
+        }
+        div{
+            text-indent: 2em;
+            text-align:justify;
+            /*word-spacing: 20px;*/
+            background: #f13f00;
+            padding:20px;
+        }
+        #id{
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+<p>
+    css样式之背景样式:<br/>
+    background-color 属性为元素设置背景色<br/>
+    background-image 属性是把图像放入背景<br/>
+    background-repeat 属性对背景图像进行平铺(repeat-x repeat-y no-repeat)<br/>
+    background-position 属性改变图像在背景中的位置(center top left right bottom 百分比 长度值)<br/>
+    background-attachment 属性防止这种滚动,如果文档比较长，那么当文档向下滚动时，背景图像也会随之滚动。当文档滚动到超过图像的位置时，图像就会消失。(fixed scroll)<br/>
+    background-size 属性规定背景图片的尺寸。<br/>
+    background-origin 属性规定背景图片的定位区域。<br/>
+</p>
+<div>
+    文本样式:<br/>
+    text-indent 属性可以方便地实现文本缩进<br/>
+    text-align 是一个基本的属性，它会影响一个元素中的文本行互相之间的对齐方式,left center right 和justify 两端对齐<br/>
+    word-spacing 字间隔可以改变字（单词）之间的标准间隔<br/>
+    letter-spacing 字母间隔 与 word-spacing 的区别在于，字母间隔修改的是字符或字母之间的间隔。<br/>
+    text-transform 属性处理文本的大小写 有4个值  none  uppercase  lowercase capitalize<br/>
+</div>
+
+
+<div class="txt">
+    <style type="text/css">
+      .txt{width: 400px; background-color: #f5f5f5; }
+      .txt li{color: #000; list-style: none;margin: 0;padding: 0}
+      .txt .h {text-transform: uppercase;/*word-break:hyphenate;word-break:break-all;*/word-wrap:break-word;}
+      .txt li.uppercase {text-transform: uppercase;text-align: justify;}
+      .txt li.lowercase {text-transform: lowercase;white-space: nowrap;}
+      .txt li.capitalize {text-transform: capitalize}
+    </style>
+    <ul>
+        <li class="h">This Is An H1 Element</li>
+        <li class="uppercase">This is some text in a paragraph.</li>
+        <li class="lowercase">This is some text in a paragraph.</li>
+        <li class="capitalize">This is some text in a paragraph.</li>
+    </ul>
+        
+</div>
+</body>
+</html>
+
+
+
